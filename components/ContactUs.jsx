@@ -1,5 +1,6 @@
 import React from 'react'
 import { Title } from './Title'
+import ContactUsForm from './ContactUsForm'
 
 const ContactUs = () => {
 	return (
@@ -31,6 +32,7 @@ const ContactUs = () => {
 					<p className='text-sm font-light'>tiktok</p>
 				</div>
 			</div>
+			<ContactUsForm />
 		</section>
 	)
 }

@@ -5,7 +5,6 @@ import { Title } from './Title'
 const OurGallary = () => {
 	return (
 		<section
-			id='section1'
 			style={{ background: 'url("/background_gallary.png") no-repeat 20%/cover' }}
 			className='px-5 py-10 flex text-white font-thin flex-col gap-6  bg-cover  '
 		>

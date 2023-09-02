@@ -38,7 +38,7 @@ const FirstScreen = () => {
 				spy={true}
 				smooth={true}
 				offset={0}
-				duration={500}
+				duration={1500}
 				className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '
 			>
 				Join now
