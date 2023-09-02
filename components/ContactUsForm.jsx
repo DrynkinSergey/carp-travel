@@ -1,19 +1,35 @@
 'use client'
 import React from 'react'
-
+import { useForm } from 'react-hook-form'
 const ContactUsForm = () => {
-	const handleSubmit = e => {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm()
+
+	const onSubmit = e => {
 		e.preventDefault()
 	}
 	return (
-		<form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+		<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
 			<div className='flex flex-col gap-2'>
 				<label>Full name</label>
-				<input className='bg-white/[0.05] px-4' placeholder='John Smith' type='text' />
+				<input
+					{...register('name', { required: true, minLength: 4 })}
+					className='bg-white/[0.05] px-4'
+					placeholder='John Smith'
+				/>
+				{errors.name && <div className='text-red-400 font-light text-right'>x Incorrect name</div>}
 			</div>
 			<div className='flex flex-col gap-2'>
 				<label>E-mail</label>
-				<input className='bg-white/[0.05] px-4' placeholder='johnsmith@email.com' type='email' />
+				<input
+					{...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+					className='bg-white/[0.05] px-4'
+					placeholder='johnsmith@email.com'
+				/>
+				{errors.email && <div className='text-red-400 font-light text-right'>x Invalid email</div>}
 			</div>
 			<div className='flex flex-col gap-2'>
 				<label>Message</label>
