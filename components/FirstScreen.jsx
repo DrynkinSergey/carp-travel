@@ -1,7 +1,15 @@
+'use client'
+
 import React from 'react'
 import Header from './Header'
-
+import { Link, animateScroll as scroll } from 'react-scroll'
 const FirstScreen = () => {
+	const handleScrollToSection = sectionId => {
+		scroll.scrollTo(sectionId, {
+			duration: 500,
+			smooth: true,
+		})
+	}
 	return (
 		<section className='py-10 px-5 bg-no-repeat bg-hero  bg-cover bg-center  font-thin  text-white'>
 			<Header />
@@ -23,9 +31,18 @@ const FirstScreen = () => {
 				We offer you unforgettable trips to the most beautiful parts of the Carpathians. Enjoy stunning views, exciting
 				expeditions, and the best service!
 			</p>
-			<button className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '>
+			<Link
+				onClick={handleScrollToSection('section1')}
+				activeClass='active'
+				to='section1'
+				spy={true}
+				smooth={true}
+				offset={0}
+				duration={500}
+				className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '
+			>
 				Join now
-			</button>
+			</Link>
 		</section>
 	)
 }
