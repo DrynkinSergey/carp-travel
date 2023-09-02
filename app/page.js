@@ -1,5 +1,6 @@
 import FirstScreen from '@/components/FirstScreen'
 import Header from '@/components/Header'
+import OurGallary from '@/components/OurGallary'
 import WhoWeAre from '@/components/WhoWeAre'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
 		<main className=''>
 			<FirstScreen />
 			<WhoWeAre />
+			<OurGallary />
 		</main>
 	)
 }
