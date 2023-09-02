@@ -1,3 +1,4 @@
+import ContactUs from '@/components/ContactUs'
 import FirstScreen from '@/components/FirstScreen'
 import Header from '@/components/Header'
 import OurGallary from '@/components/OurGallary'
@@ -9,6 +10,7 @@ export default function Home() {
 			<FirstScreen />
 			<WhoWeAre />
 			<OurGallary />
+			<ContactUs />
 		</main>
 	)
 }
