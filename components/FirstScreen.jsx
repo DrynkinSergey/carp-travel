@@ -13,36 +13,78 @@ const FirstScreen = () => {
 	return (
 		<section className='py-10 px-5 bg-no-repeat bg-hero  bg-cover bg-center  font-thin  text-white'>
 			<Header />
-			<div className=' text-4xl mt-6 text-right'>
-				<h2 className='tracking-[4px]'>
-					<span className='font-bold text-white '>7</span>DAYS
-				</h2>
-				<h3 className='text-sm tracking-[9px]'>JOURNEY</h3>
-			</div>
-			<section className='uppercase text-4xl'>
-				<div className='flex flex-col gap-4 my-8'>
-					<h4 className='font-semibold'>Uncover</h4>
-					<h4>Carpathian’s </h4>
-					<h4>Secrets</h4>
+			{/* Tablet */}
+			<section className='hidden md:flex md:gap-10 md:mt-10  '>
+				<section className='uppercase md:flex md:flex-col md:gap-20 text-4xl md:text-6xl'>
+					<div className='flex flex-col gap-4 my-8'>
+						<h4 className='font-semibold'>Uncover</h4>
+						<h4>Carpathian’s </h4>
+						<h4>Secrets</h4>
+					</div>
+					<p className='text-xs w-2/3  mb-8'>Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake / Bukovel</p>
+				</section>
+				<div className=' mt-6 '>
+					<div className='text-6xl mb-12'>
+						<h2 className='tracking-[18px]'>
+							<span className='font-bold text-white '>7</span>DAYS
+						</h2>
+						<h3 className='text-3xl tracking-[19px]'>JOURNEY</h3>
+					</div>
+					<p className='font-extralight tracking-wide'>
+						We offer you unforgettable trips to the most beautiful parts of the Carpathians. Enjoy stunning views,
+						exciting expeditions, and the best service!
+					</p>
+					<Link
+						onClick={handleScrollToSection('section1')}
+						activeClass='active'
+						to='section1'
+						spy={true}
+						smooth={true}
+						offset={0}
+						duration={1500}
+						className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '
+					>
+						Join now
+					</Link>
 				</div>
 			</section>
-			<p className='text-xs w-2/3 mb-8'>Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake / Bukovel</p>
-			<p className='font-extralight tracking-wide'>
-				We offer you unforgettable trips to the most beautiful parts of the Carpathians. Enjoy stunning views, exciting
-				expeditions, and the best service!
-			</p>
-			<Link
-				onClick={handleScrollToSection('section1')}
-				activeClass='active'
-				to='section1'
-				spy={true}
-				smooth={true}
-				offset={0}
-				duration={1500}
-				className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '
-			>
-				Join now
-			</Link>
+			{/* Mobile */}
+
+			<section className='md:hidden block'>
+				<div className=' text-4xl mt-6 text-right'>
+					<h2 className='tracking-[4px]'>
+						<span className='font-bold text-white '>7</span>DAYS
+					</h2>
+					<h3 className='text-sm tracking-[9px]'>JOURNEY</h3>
+				</div>
+				<section className='uppercase md:flex md:flex-col md:gap-20 text-4xl md:text-6xl'>
+					<div className='flex flex-col gap-4 my-8'>
+						<h4 className='font-semibold'>Uncover</h4>
+						<h4>Carpathian’s </h4>
+						<h4>Secrets</h4>
+					</div>
+					<p className='text-xs w-2/3 md:w-1/3 mb-8'>
+						Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake / Bukovel
+					</p>
+				</section>
+
+				<p className='font-extralight tracking-wide'>
+					We offer you unforgettable trips to the most beautiful parts of the Carpathians. Enjoy stunning views,
+					exciting expeditions, and the best service!
+				</p>
+				<Link
+					onClick={handleScrollToSection('section1')}
+					activeClass='active'
+					to='section1'
+					spy={true}
+					smooth={true}
+					offset={0}
+					duration={1500}
+					className=' mt-10 uppercase font-bold text-2xl py-4 flex justify-center w-full bg-white/10 '
+				>
+					Join now
+				</Link>
+			</section>
 		</section>
 	)
 }
