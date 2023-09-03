@@ -2,14 +2,8 @@
 
 import React from 'react'
 import Header from './Header'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 const FirstScreen = () => {
-	const handleScrollToSection = sectionId => {
-		scroll.scrollTo(sectionId, {
-			duration: 500,
-			smooth: true,
-		})
-	}
 	return (
 		<section className='py-10 px-5 bg-no-repeat bg-hero  bg-cover bg-center  font-thin  text-white'>
 			<Header />
@@ -35,7 +29,6 @@ const FirstScreen = () => {
 						exciting expeditions, and the best service!
 					</p>
 					<Link
-						onClick={handleScrollToSection('section1')}
 						activeClass='active'
 						to='section1'
 						spy={true}
@@ -73,7 +66,6 @@ const FirstScreen = () => {
 					exciting expeditions, and the best service!
 				</p>
 				<Link
-					onClick={handleScrollToSection('section1')}
 					activeClass='active'
 					to='section1'
 					spy={true}

@@ -3,14 +3,9 @@ import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 // components/Slider.js
 import React, { useRef, useState } from 'react'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-// Import Swiper styles
 import 'swiper/swiper-bundle.css'
-
-// Install Swiper components
-SwiperCore.use([Navigation, Scrollbar, A11y])
 
 const data = [
 	{
@@ -57,10 +52,6 @@ function Slider() {
 	return (
 		<Swiper
 			ref={swiperRef}
-			effect='fade' // Set the fade effect
-			fadeEffect={{
-				crossFade: true, // Enable cross-fade for smoother transitions
-			}}
 			style={{ background: `url("/images/bg${activeSlideIndex}.png") no-repeat center/cover` }}
 			className='bg-none'
 			scrollbar={{ draggable: true }}

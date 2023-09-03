@@ -1,3 +1,4 @@
+import ChooseUs from '@/components/ChooseUs'
 import ContactUs from '@/components/ContactUs'
 import FirstScreen from '@/components/FirstScreen'
 import Header from '@/components/Header'
@@ -14,6 +15,7 @@ export default function Home() {
 			<OurGallary />
 			<ContactUs />
 			<WeOffer />
+			<ChooseUs />
 		</main>
 	)
 }
