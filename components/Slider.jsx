@@ -6,6 +6,7 @@ import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper-bundle.css'
+import clsx from 'clsx'
 
 const data = [
 	{
@@ -39,7 +40,7 @@ function Slider() {
 	const [activeSlideIndex, setActiveSlideIndex] = useState(1)
 
 	const handleSlideChange = swiper => {
-		setActiveSlideIndex(swiper.activeIndex + 1)
+		setActiveSlideIndex(swiper.activeIndex)
 	}
 
 	const swiperRef = useRef(null)
@@ -52,19 +53,22 @@ function Slider() {
 	return (
 		<Swiper
 			ref={swiperRef}
-			style={{ background: `url("/images/bg${activeSlideIndex}.png") no-repeat center/cover` }}
-			className='bg-none'
+			style={{
+				backgroundImage: `url("/images/bg${activeSlideIndex + 1}.png")`,
+				backgroundRepeat: 'no-repeat',
+				backgroundSize: 'cover',
+			}}
+			className='bg-black'
 			scrollbar={{ draggable: true }}
 			onSlideChange={handleSlideChange}
 		>
-			<AnimatePresence>
+			<AnimatePresence mode='wait'>
 				{data.map((item, index) => (
-					<SwiperSlide key={index} className='h-[100%]'>
+					<SwiperSlide key={index} className='h-[100%] px-5'>
 						<motion.div
 							className='text-white font-thin'
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
-							whileDrag={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
 							transition={{ duration: 1 }}
 						>
@@ -75,12 +79,16 @@ function Slider() {
 							</div>
 							<Image src={`/images/0${index + 1}.png`} width={200} className='w-full p-5' alt='bgImage' height={200} />
 							<span>{item.title}</span>
-							<ul className='flex flex-col gap-4 uppercase'>
-								<li onClick={() => goToSlide(0)}>ATVs Traveling</li>
-								<li onClick={() => goToSlide(1)}>Rock climbing</li>
-								<li onClick={() => goToSlide(2)}>Hot air ballooning</li>
-								<li onClick={() => goToSlide(3)}>Skydiving</li>
-								<li onClick={() => goToSlide(4)}>Rafting</li>
+							<ul className='flex mt-5 flex-col gap-4 uppercase'>
+								{data.map((listItem, index) => (
+									<li
+										key={index}
+										className={clsx(index === activeSlideIndex ? 'font-medium mx-6 list-disc' : '')}
+										onClick={() => goToSlide(index)}
+									>
+										{listItem.paginateName}
+									</li>
+								))}
 							</ul>
 							<p className='mt-14 pb-10'>{item.desc}</p>
 						</motion.div>
