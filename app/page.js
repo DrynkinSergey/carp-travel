@@ -12,10 +12,10 @@ export default function Home() {
 		<main className=''>
 			<FirstScreen />
 			<WhoWeAre />
-			<OurGallary />
-			<ContactUs />
 			<WeOffer />
 			<ChooseUs />
+			<OurGallary />
+			<ContactUs />
 		</main>
 	)
 }

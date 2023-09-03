@@ -59,7 +59,7 @@ function Slider() {
 		>
 			<AnimatePresence>
 				{data.map((item, index) => (
-					<SwiperSlide className='h-[100%]'>
+					<SwiperSlide key={index} className='h-[100%]'>
 						<motion.div
 							className='text-white font-thin'
 							initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ function Slider() {
 									0{index + 1}/0{data.length}
 								</span>
 							</div>
-							<Image src={`/images/0${index + 1}.png`} width={200} className='w-full p-5' height={200} />
+							<Image src={`/images/0${index + 1}.png`} width={200} className='w-full p-5' alt='bgImage' height={200} />
 							<span>{item.title}</span>
 							<ul className='flex flex-col gap-4 uppercase'>
 								<li onClick={() => goToSlide(0)}>ATVs Traveling</li>
