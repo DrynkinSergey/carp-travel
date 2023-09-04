@@ -37,7 +37,7 @@ const data = [
 ]
 
 function Slider() {
-	const [activeSlideIndex, setActiveSlideIndex] = useState(1)
+	const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
 	const handleSlideChange = swiper => {
 		setActiveSlideIndex(swiper.activeIndex)
