@@ -20,7 +20,6 @@ const data = [
 	{
 		imgMobile: '/images/02.png',
 		imgTablet: '/images/gallery02_tablet.png',
-		imgMobile: '/images/01.png',
 		title: 'Destroy your limitations',
 		desc: 'Overcome the peaks of the Carpathians in a unique way - climbing. Make your own way to the heights and find inner peace in the embrace of the mighty rocks.',
 		paginateName: 'Rock climbing',
@@ -28,7 +27,6 @@ const data = [
 	{
 		imgMobile: '/images/03.png',
 		imgTablet: '/images/gallery03_tablet.png',
-		imgMobile: '/images/01.png',
 		title: 'Get Inspired',
 		desc: 'Feel Zen over the mountain peaks! Hot air ballooning gives you incredible impressions and panoramas of the Carpathians that seem endless.',
 		paginateName: 'Hot air ballooning',
@@ -36,7 +34,6 @@ const data = [
 	{
 		imgMobile: '/images/04.png',
 		imgTablet: '/images/gallery04_tablet.png',
-		imgMobile: '/images/01.png',
 		title: 'Overcome your fears',
 		desc: 'Fly in the sky over the Carpathians! Experienced instructors will help you realize your dream of free flight. Remember the incredible emotions and panoramas from a birds eye view forever. ',
 		paginateName: 'Skydiving',
@@ -44,7 +41,6 @@ const data = [
 	{
 		imgMobile: '/images/05.png',
 		imgTablet: '/images/gallery05_tablet.png',
-		imgMobile: '/images/01.png',
 		title: 'Trust the flow',
 		desc: 'Join exciting rafting expeditions on the waterways of the Carpathians. Go through challenging waterways and overcome gusty waves, feel the adrenaline, and enjoy the incredible views of the surrounding mountains.',
 		paginateName: 'Rafting',
@@ -72,6 +68,7 @@ function Slider() {
 				backgroundImage: `url("/images/bg${activeSlideIndex + 1}.png")`,
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
+				backgroundPosition: 'center',
 			}}
 			className='bg-black'
 			scrollbar={{ draggable: true }}
@@ -104,13 +101,13 @@ function Slider() {
 								<Image
 									src={item.imgTablet}
 									width={200}
-									className='md:block w-full aspect-[8/6] p-5'
+									className='md:block hidden w-full aspect-[8/6] p-5'
 									alt='bgImage'
 									height={200}
 								/>
 
 								<div>
-									<span className='md:text-sm text-white/50'>{item.title}</span>
+									<span className='md:text-sm text-white/90'>{item.title}</span>
 									<ul className='flex mt-5 flex-col gap-4 uppercase'>
 										{data.map((listItem, index) => (
 											<li
