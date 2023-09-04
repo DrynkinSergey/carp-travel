@@ -1,6 +1,5 @@
 import React from 'react'
 import Slider from './Slider'
-import { Title } from './Title'
 
 const WeOffer = () => {
 	return (
