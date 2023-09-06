@@ -6,10 +6,11 @@ const ChooseUs = () => {
 	return (
 		<>
 			<section
-				style={{ background: 'url("/images/chooseUsBg.png") no-repeat 20%/cover' }}
-				className='px-5  py-10 flex text-white font-thin flex-col gap-6  bg-cover  '
+				style={{ background: 'url("/images/man.avif") no-repeat center/cover' }}
+				className='px-5 relative z-40 py-10 flex text-white font-thin flex-col gap-6 lg:min-h-screen lg:px-14  bg-cover  '
 			>
-				<section className='grid md:grid-cols-[2fr,1fr] items-center'>
+				<div className='absolute inset-0 z-[-1] bg-black bg-opacity-50'></div>
+				<section className='grid  md:grid-cols-[2fr,1fr] items-center'>
 					<Title onePart='choose' secondPart='us' className='md:text-6xl' />
 					<div className='flex justify-end px-2'>
 						<p className='flex justify-right py-6 w-2/3 md:w-full md:text-sm'>

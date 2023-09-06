@@ -8,7 +8,7 @@ const OurGallary = () => {
 	return (
 		<section
 			style={{ background: 'url("/background_gallary.png") no-repeat 20%/cover' }}
-			className='px-5  py-10 flex text-white font-thin flex-col gap-6 items-center  bg-cover  '
+			className='px-5 lg:px-14 py-10 flex text-white font-thin flex-col gap-6 items-center  bg-cover  '
 		>
 			<Title onePart='our' secondPart='GALLERY' />
 			<section className='md:hidden'>
@@ -18,7 +18,7 @@ const OurGallary = () => {
 			</section>
 
 			<div className='w-full overflow-hidden'>
-				<Swiper slidesPerView={3} spaceBetween={10} loop={true}>
+				<Swiper slidesPerView={3} spaceBetween={10} loop={true} className='lg:w-3/4'>
 					<SwiperSlide>
 						<Image src='/img1.png' alt='img1' width={300} height={100} />
 					</SwiperSlide>

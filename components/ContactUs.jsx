@@ -6,10 +6,10 @@ const ContactUs = () => {
 	return (
 		<section
 			id='section1'
-			style={{ background: 'url("/contactUsBg.png") no-repeat 20%/cover' }}
-			className='px-5 py-10 flex text-white font-thin flex-col gap-6 md:text-xl bg-cover  '
+			style={{ background: 'url("/images/bg_end.avif") no-repeat center/cover' }}
+			className='px-5 py-10 flex text-white font-thin flex-col lg:px-14 lg:py-20 gap-6 md:text-xl bg-cover  '
 		>
-			<Title onePart='contact' secondPart='us' className='md:text-6xl' />
+			<Title onePart='contact' secondPart='us' className='md:text-6xl lg:mb-10' />
 			<div className='grid gap-6 md:grid-cols-2 md:text-2xl'>
 				<div className='grid  grid-cols-[2fr,1fr] gap-4  text-sm md:text-xl  justify-center  '>
 					<div className=' text-right font-light'>

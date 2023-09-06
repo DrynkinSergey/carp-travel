@@ -36,18 +36,18 @@ const WhoWeAre = () => {
 			{/* Tablet */}
 			<section
 				style={{ background: 'url("/background_two.png") no-repeat 20%/cover' }}
-				className=' md:grid   px-5 py-10 hidden text-white font-thin  gap-6  bg-cover  '
+				className=' md:grid lg:px-14 lg:min-h-screen px-5 py-10 hidden text-white font-thin  gap-6  bg-cover  '
 			>
-				<div className='grid-cols-[3fr,2fr]  justify-center grid mb-10 '>
+				<div className='grid-cols-[3fr,2fr] lg:grid-cols-2  justify-center grid mb-10 '>
 					<div className='flex flex-col  justify-between '>
 						<Title onePart='WHO' secondPart='WE ARE' className='text-6xl ' />
-						<div className='flex flex-col '>
+						<div className='grid  '>
 							<p className='uppercase font-light '>From vacationers </p>
 							<p className='uppercase font-light pl-10'>to active travelers </p>
 							<p className='text-base'>we have a tour for everyone. </p>
 						</div>
 					</div>
-					<div className=''>
+					<div className='lg:w-1/2 lg:grid gap-10'>
 						<p>
 							<span className='font-light'>a team of enthusiasts</span> who are fully committed to the mission of
 							creating unforgettable and extraordinary trips to the most beautiful parts of the Carpathians. Our goal is

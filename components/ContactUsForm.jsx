@@ -12,7 +12,10 @@ const ContactUsForm = () => {
 		console.log('success')
 	}
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='grid md:grid-cols-2 gap-4'>
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className='grid md:grid-cols-2 gap-4 lg:grid-cols-[1fr] lg:w-1/2 lg:mx-auto'
+		>
 			<div>
 				<div className='flex flex-col gap-2'>
 					<label>Full name</label>

@@ -61,36 +61,37 @@ function Slider() {
 			swiperRef.current.swiper.slideTo(index)
 		}
 	}
+
 	return (
 		<Swiper
 			ref={swiperRef}
 			style={{
-				backgroundImage: `url("/images/bg${activeSlideIndex + 1}.png")`,
+				backgroundImage: `url("/images/bg_gallary_${activeSlideIndex + 1}.avif ")`,
 				backgroundRepeat: 'no-repeat',
-				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 			}}
-			className='bg-black'
+			className={`bg-black bg-cover bg-opacity-10 bg-fixed`}
 			scrollbar={{ draggable: true }}
 			onSlideChange={handleSlideChange}
 		>
+			<div className='inset-0 absolute bg-opacity-50 bg-black'></div>
 			<AnimatePresence mode='wait'>
 				{data.map((item, index) => (
-					<SwiperSlide key={index} className=' md:pt-20 pt-8 px-5'>
+					<SwiperSlide key={index} className=' md:pt-20 lg:pb-10 pt-8 px-5 '>
 						<motion.div
-							className='text-white font-thin'
+							className='text-white lg:min-h-screen font-thin'
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
 							transition={{ duration: 1 }}
 						>
-							<div className='flex justify-between md:px-10 '>
-								<Title onePart='we' secondPart='offer' className='text-2xl md:text-6xl md:pb-8' />
+							<div className='flex  justify-between md:px-10 '>
+								<Title onePart='we' secondPart='offer' className='text-2xl md:text-6xl md:pb-8 lg:text-7xl' />
 								<span className='md:text-6xl text-2xl'>
 									0{index + 1}/<span className='text-white/20'>0{data.length}</span>
 								</span>
 							</div>
-							<div className='grid md:grid-cols-[2fr,1fr] '>
+							<div className='grid md:grid-cols-[2fr,1fr] lg:grid-cols-2 '>
 								<Image
 									src={item.imgMobile}
 									width={200}
@@ -101,25 +102,28 @@ function Slider() {
 								<Image
 									src={item.imgTablet}
 									width={200}
-									className='md:block hidden w-full aspect-[8/6] p-5'
+									className='md:block hidden w-full aspect-[8/6] lg:aspect-[3/2] p-5'
 									alt='bgImage'
 									height={200}
 								/>
 
 								<div>
-									<span className='md:text-sm text-white/90'>{item.title}</span>
+									<span className='md:text-sm lg:float-right lg:pr-10 text-white/90'>{item.title}</span>
 									<ul className='flex mt-5 flex-col gap-4 uppercase'>
 										{data.map((listItem, index) => (
 											<li
 												key={index}
-												className={clsx(index === activeSlideIndex ? 'font-medium mx-6 list-disc' : '')}
+												className={clsx(
+													'cursor-pointer',
+													index === activeSlideIndex ? 'font-medium mx-6 list-disc' : ''
+												)}
 												onClick={() => goToSlide(index)}
 											>
 												{listItem.paginateName}
 											</li>
 										))}
 									</ul>
-									<p className='mt-14 md:mt-4 text-sm pb-10'>{item.desc}</p>
+									<p className='mt-14 md:mt-4 text-sm pb-10 lg:pt-14 lg:w-1/2 grid  float-right'>{item.desc}</p>
 								</div>
 							</div>
 						</motion.div>
