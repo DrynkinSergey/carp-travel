@@ -17,8 +17,8 @@ const OurGallary = () => {
 				<Image src='/img3.png' alt='img3' width={300} height={100} />
 			</section>
 
-			<div className='w-2/3 overflow-hidden'>
-				<Swiper slidesPerView={3} loop={true}>
+			<div className='w-full overflow-hidden'>
+				<Swiper slidesPerView={3} spaceBetween={10} loop={true}>
 					<SwiperSlide>
 						<Image src='/img1.png' alt='img1' width={300} height={100} />
 					</SwiperSlide>
